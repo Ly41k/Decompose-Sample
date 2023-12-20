@@ -34,17 +34,17 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(compose.runtime)
+            implementation(compose.ui)
             implementation(compose.foundation)
             implementation(compose.material)
+            implementation(compose.runtime)
+            implementation(compose.animation)
+
             @OptIn(ExperimentalComposeLibrary::class)
             implementation(compose.components.resources)
             implementation(libs.decompose)
             implementation(libs.decompose.jetbrains)
             implementation(libs.kotlinx.serialization.json)
-        }
-        commonTest.dependencies {
-            implementation(libs.kotlin.test)
         }
 
         androidMain.dependencies {
@@ -62,4 +62,7 @@ android {
     defaultConfig {
         minSdk = 24
     }
+}
+dependencies {
+
 }
